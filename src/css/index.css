@@ -3,12 +3,22 @@
 @import url("https://gitcdn.ir/library/PersianFonts/iranyekan/3/style.css");
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import "bootstrap/dist/css/bootstrap-grid.rtl.min.css";
+@import "locomotive-scroll/dist/locomotive-scroll.min.css";
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+body{
+  width: 100vw;
+  height: auto;
+  overflow: hidden!important;
+}
+
+::-webkit-scrollbar{
+  display: none!important;
+}
 
 a{
     text-decoration: none;
@@ -59,13 +69,27 @@ button,input,fieldset{
 * {
   font-family: var(--iranyekan-font);
 }
-
-
+#myFullPage{
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden!important;
+}
+.section{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden!important;
+}
+.s4-section{
+  overflow: hidden!important;
+}
 
 /*End Global Styles*/
 
 /*Start Index*/
 .index-section-one {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -282,10 +306,20 @@ button,input,fieldset{
   -ms-transform: translate(-50%,-50%);
   -o-transform: translate(-50%,-50%);
 }
-.polygan-index-left-container > img {
+.polygan-index-left-container > img,
+.profile-index-left-container>img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.profile-index-left-container{
+width: 80%;
+height: 80%;
+position: absolute;
+bottom: 0;
+left: 0;
+z-index: 10;
 }
 
 .index-section-one-center {
@@ -429,7 +463,6 @@ button,input,fieldset{
   align-items: center;
   justify-content: center;
   row-gap: 0.6rem;
-  visibility: collapse;
   transition: 1s ease-in-out;
   -webkit-transition: 1s ease-in-out;
   -moz-transition: 1s ease-in-out;
@@ -451,31 +484,6 @@ button,input,fieldset{
   object-fit: cover;
 }
 
-.section-two-bottom-part-one .section-two-bottom-item {
-  transform: translateY(-100%);
-  -webkit-transform: translateY(-100%);
-  -moz-transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  -o-transform: translateY(-100%);
-}
-
-.section-two-bottom-part-two .section-two-bottom-item {
-  transform: translateY(100%);
-  -webkit-transform: translateY(100%);
-  -moz-transform: translateY(100%);
-  -ms-transform: translateY(100%);
-  -o-transform: translateY(100%);
-}
-
-.section-two-bottom-part-one .section-two-bottom-item.show,
-.section-two-bottom-part-two .section-two-bottom-item.show {
-  visibility: visible;
-  transform: translateY(0);
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
-}
 
 .section-two-bottom-item > .s2-card-title {
   color: var(--text-color-primary);
@@ -740,6 +748,8 @@ button,input,fieldset{
   object-fit: contain;
 }
 .index-section-four {
+  width: 100vw;
+  height: 100vh;
   position: relative;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
@@ -751,11 +761,14 @@ button,input,fieldset{
   display: none;
 }
 .index-section-four-container {
-  width: 100%;
-  height: 400%;
+  width: 99vw;
+  height: 400vh;
+  margin: auto;
   position: relative;
   z-index: 2;
   background-color: var(--background-color-secondray);
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .section-four-circle-one {
   opacity: 0.4;
@@ -1916,11 +1929,12 @@ button,input,fieldset{
   left: 30%;
   filter: blur(10px) opacity(0.5);
 }
-.index-setion-six {
+.index-section-six {
   position: relative;
   background-color: var(--background-color-secondray);
   overflow: hidden;
   padding: 2rem 3rem;
+  display: flex;
 }
 .index-section-six-right {
   height: 100%;
@@ -2341,17 +2355,15 @@ button,input,fieldset{
 /* start footer */
 
 .index-page-footer {
-  width: 100vw;
-  height: 60vh;
-  scroll-snap-align: center;
   position: relative;
   overflow: hidden;
-  padding: 1rem 7rem;
-  justify-content: space-between;
+  padding: 3rem 7rem;
+  justify-content: center;
   align-items: center;
+  row-gap: 5rem;
 }
 .index-footer-section-one {
-  height: 80%;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -2418,8 +2430,8 @@ button,input,fieldset{
   justify-content: center;
 }
 .index-footer-section-two {
+  height: 250px;
   display: flex;
-  height: 80%;
   position: relative;
   z-index: 2;
   justify-content: space-between;
@@ -2440,7 +2452,7 @@ button,input,fieldset{
   color: var(--text-color-secondray);
 }
 .index-footer-section-three {
-  height: 80%;
+  height: 250px;
   position: relative;
   z-index: 2;
   display: flex;
