@@ -13,7 +13,7 @@ module.exports = {
         filename: "[name].[contenthash].js",
         assetModuleFilename: 'assets/[name][hash][ext]'
     },
-    mode: "development",
+    mode: "production",
     module: {
         rules: [
             {
@@ -51,16 +51,5 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "css/style/[name][contenthash].css"
         }),
-    ],
-    devServer: {
-        devMiddleware: {
-            writeToDisk: true
-        },
-        static: {
-            directory: pathAbso.join(__dirname, 'build'),
-        },
-        compress: true,
-        port: 9000,
-    },
-
+    ]
 }
